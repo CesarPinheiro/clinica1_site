@@ -7,12 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body { font-family: 'Inter', sans-serif; background: #fff; color: #0d1b2a; }
 
   /* ── Header ── */
   .header {
     background: linear-gradient(135deg, #0a1628 0%, #0d2147 60%, #0a3d62 100%);
-    padding: 48px 32px 56px;
+    padding: 48px 24px 56px;
     text-align: center;
   }
   .logo {
@@ -21,7 +22,7 @@
     color: rgba(255,255,255,0.5);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .badge {
     display: inline-flex;
@@ -39,11 +40,11 @@
     margin-bottom: 20px;
   }
   .header h1 {
-    font-size: clamp(26px, 4vw, 44px);
+    font-size: clamp(22px, 6vw, 44px);
     font-weight: 800;
     color: #fff;
-    line-height: 1.15;
-    margin-bottom: 16px;
+    line-height: 1.2;
+    margin-bottom: 14px;
   }
   .header h1 span {
     background: linear-gradient(90deg, #25D366, #00b4d8);
@@ -52,15 +53,15 @@
     background-clip: text;
   }
   .header p {
-    font-size: 17px;
+    font-size: clamp(14px, 3.5vw, 17px);
     color: rgba(255,255,255,0.65);
     max-width: 520px;
     margin: 0 auto;
     line-height: 1.7;
   }
 
-  /* ── Seções ── */
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+  /* ── Layout ── */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
 
   .label {
     display: inline-block;
@@ -70,49 +71,47 @@
     border-radius: 999px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .lg { background: #e8f5e9; color: #1b873f; }
   .lb { background: #eff6ff; color: #1d4ed8; }
   .lo { background: #fff7ed; color: #c2410c; }
 
-  section { padding: 64px 0; }
+  section { padding: 52px 0; }
   section h2 {
-    font-size: clamp(22px, 3vw, 32px);
+    font-size: clamp(20px, 4vw, 32px);
     font-weight: 800;
     color: #0d1b2a;
     margin-bottom: 10px;
     line-height: 1.2;
   }
   .sub {
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     color: #64748b;
     line-height: 1.7;
     max-width: 600px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   /* ── Vantagens ── */
   .s-vant { background: #fff; }
   .vant-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    gap: 14px;
   }
   .vant {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 24px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 20px;
   }
-  .vant:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
   .vant.hl {
     background: linear-gradient(135deg, #0a1628, #0d2147);
     border-color: transparent;
   }
-  .vi { font-size: 28px; margin-bottom: 12px; display: block; }
-  .vant h3 { font-size: 15px; font-weight: 700; color: #0d1b2a; margin-bottom: 6px; }
+  .vi { font-size: 26px; margin-bottom: 10px; display: block; }
+  .vant h3 { font-size: 14px; font-weight: 700; color: #0d1b2a; margin-bottom: 6px; }
   .vant p  { font-size: 13px; color: #64748b; line-height: 1.65; }
   .vant.hl h3 { color: #fff; }
   .vant.hl p  { color: rgba(255,255,255,0.7); }
@@ -120,7 +119,7 @@
   /* ── Integração ── */
   .s-integ {
     background: linear-gradient(135deg, #0a1628, #0d2147 55%, #0a3d62);
-    padding: 64px 0;
+    padding: 52px 0;
   }
   .s-integ h2  { color: #fff; }
   .s-integ .sub { color: rgba(255,255,255,0.6); }
@@ -131,16 +130,16 @@
   }
   .integ-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 12px;
   }
   .ic {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 14px;
-    padding: 22px;
+    padding: 20px;
   }
-  .ii { font-size: 24px; margin-bottom: 12px; display: block; }
+  .ii { font-size: 22px; margin-bottom: 10px; display: block; }
   .pill {
     display: inline-block;
     background: rgba(37,211,102,0.18);
@@ -158,80 +157,87 @@
   .s-seg { background: #fff; }
   .seg-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 14px;
   }
   .sc {
     border-left: 4px solid #1d4ed8;
     background: #f8fafc;
     border-radius: 0 14px 14px 0;
-    padding: 20px 20px 20px 18px;
-    transition: box-shadow 0.2s;
+    padding: 18px 18px 18px 16px;
   }
-  .sc:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
   .sc.g { border-color: #25D366; }
   .sc.n { border-color: #0d2147; }
-  .si { font-size: 22px; margin-bottom: 10px; display: block; }
+  .si { font-size: 20px; margin-bottom: 8px; display: block; }
   .sc h3 { font-size: 14px; font-weight: 700; color: #0d1b2a; margin-bottom: 6px; }
   .sc p  { font-size: 13px; color: #64748b; line-height: 1.65; }
 
   /* ── Tabela ── */
   .s-tab { background: #f1f5f9; }
-  .table-wrap { overflow-x: auto; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   table {
     width: 100%;
+    min-width: 520px;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: 13px;
     background: #fff;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   }
   thead tr { background: #0d2147; }
   thead th {
     color: #fff;
-    padding: 14px 20px;
+    padding: 13px 16px;
     text-align: left;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.4px;
+    white-space: nowrap;
   }
-  tbody tr { border-bottom: 1px solid #f1f5f9; transition: background 0.15s; }
-  tbody tr:hover { background: #fafbfc; }
+  tbody tr { border-bottom: 1px solid #f1f5f9; }
   tbody tr:last-child { border-bottom: none; }
-  tbody td { padding: 13px 20px; color: #374151; line-height: 1.4; }
-  tbody td:first-child { font-weight: 600; color: #0d1b2a; }
+  tbody td { padding: 12px 16px; color: #374151; line-height: 1.4; }
+  tbody td:first-child { font-weight: 600; color: #0d1b2a; white-space: nowrap; }
   .yes { color: #1b873f; font-weight: 700; }
   .no  { color: #94a3b8; }
 
   /* ── Footer ── */
   .footer {
     background: #0d1b2a;
-    padding: 36px 28px;
+    padding: 36px 24px;
     text-align: center;
   }
   .footer p { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
   .btn-wa {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     background: #25D366;
     color: #fff;
     font-size: 15px;
     font-weight: 700;
-    padding: 14px 28px;
+    padding: 16px 28px;
     border-radius: 12px;
     text-decoration: none;
     box-shadow: 0 4px 20px rgba(37,211,102,0.4);
     transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 100%;
   }
   .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
-  .btn-wa svg { width: 20px; height: 20px; fill: #fff; }
+  .btn-wa svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
 
-  @media (max-width: 600px) {
-    .header { padding: 36px 20px 44px; }
-    section { padding: 48px 0; }
-    .wrap { padding: 0 20px; }
+  /* ── Mobile ── */
+  @media (max-width: 480px) {
+    .header { padding: 36px 16px 44px; }
+    section { padding: 40px 0; }
+    .s-integ { padding: 40px 0; }
+    .wrap { padding: 0 16px; }
+    .vant-grid, .integ-grid, .seg-grid { gap: 10px; }
+    .btn-wa { width: 100%; font-size: 14px; padding: 15px 20px; }
+    table { font-size: 12px; }
+    thead th, tbody td { padding: 10px 12px; }
   }
 </style>
 </head>
@@ -241,7 +247,7 @@
 <div class="header">
   <div class="logo">Clinica1</div>
   <div class="badge">⚡ Novo módulo</div>
-  <h1>Agendamento por <span>Inteligência Artificial</span><br>via WhatsApp</h1>
+  <h1>Agendamento por <span>Inteligência Artificial</span> via WhatsApp</h1>
   <p>Seu assistente que atende, agenda, cancela e remarca consultas — 24h por dia, sem intervenção humana.</p>
 </div>
 
@@ -307,7 +313,7 @@
       <div class="ic">
         <span class="ii">🔄</span>
         <h3>Agenda sempre atualizada</h3>
-        <p>Sem importação, sem lote noturno. As operações da IA modificam a agenda no mesmo momento em que o paciente confirma — como um atendente ao vivo.</p>
+        <p>Sem importação, sem lote noturno. As operações da IA modificam a agenda no mesmo momento em que o paciente confirma.</p>
       </div>
       <div class="ic">
         <span class="ii">📋</span>
@@ -373,11 +379,11 @@
           <tr><td>Horário de atendimento</td><td class="no">Horário comercial</td><td class="yes">24h / 7 dias</td></tr>
           <tr><td>Custo por agendamento</td><td class="no">Alto — tempo de atendente</td><td class="yes">Fixo e escalável</td></tr>
           <tr><td>Atualização da agenda</td><td class="yes">Tempo real</td><td class="yes">Tempo real</td></tr>
-          <tr><td>Remarcação pelo paciente</td><td class="no">Depende de ligação ou presença</td><td class="yes">Autônoma pelo WhatsApp</td></tr>
+          <tr><td>Remarcação pelo paciente</td><td class="no">Depende de ligação</td><td class="yes">Autônoma pelo WhatsApp</td></tr>
           <tr><td>Identificação de recorrentes</td><td class="no">Manual</td><td class="yes">Automática por histórico</td></tr>
           <tr><td>Vagas expostas ao paciente</td><td class="no">Toda a agenda</td><td class="yes">Subconjunto configurável</td></tr>
           <tr><td>Validação de cancelamento</td><td class="no">Não verificada</td><td class="yes">Confirmada por número de origem</td></tr>
-          <tr><td>Rastreabilidade dos diálogos</td><td class="no">Inexistente</td><td class="yes">Conversa vinculada ao registro no Clinica1</td></tr>
+          <tr><td>Rastreabilidade dos diálogos</td><td class="no">Inexistente</td><td class="yes">Vinculada ao registro no Clinica1</td></tr>
           <tr><td>Canal de atendimento</td><td class="no">Telefone, presencial</td><td class="yes">WhatsApp — sem app adicional</td></tr>
           <tr><td>Idioma do atendimento</td><td class="no">Limitado ao atendente</td><td class="yes">Qualquer idioma, automaticamente</td></tr>
         </tbody>
@@ -386,7 +392,7 @@
   </div>
 </section>
 
-<!-- Footer / CTA -->
+<!-- Footer -->
 <div class="footer">
   <p>O módulo está em operação em ambiente clínico real. Experimente ao vivo.</p>
   <a href="https://wa.me/553190895376?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20consulta"
