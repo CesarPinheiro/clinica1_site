@@ -95,6 +95,7 @@ Página standalone com 4 seções + header + footer:
 - Cada vaga pode ser restrita a **particular** ou a um **convênio específico** — o assistente filtra automaticamente
 - O sistema exibe ao paciente **apenas o mínimo necessário** para concluir o agendamento
 - Cancelamentos e remarcações só são aceitos pelo **mesmo número** que realizou o agendamento
+- **Acesso restrito por telefone é opcional** — a clínica decide se aceita qualquer número ou somente números cadastrados; útil para convênios corporativos ou planos fechados
 - Todos os diálogos que geraram alterações ficam **vinculados ao registro** dentro do Clinica1
 - Alterações na agenda são **on-line e em tempo real** — sem importação ou lote noturno
 - O assistente atende em **qualquer idioma** automaticamente
