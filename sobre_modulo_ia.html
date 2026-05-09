@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo IA — Agendamento via WhatsApp | Clinica1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #0d1b2a; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2147 60%, #0a3d62 100%);
+    padding: 48px 32px 56px;
+    text-align: center;
+  }
+  .logo {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(37,211,102,0.15);
+    border: 1px solid rgba(37,211,102,0.35);
+    color: #25D366;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .header h1 span {
+    background: linear-gradient(90deg, #25D366, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Seções ── */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+  .label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .lg { background: #e8f5e9; color: #1b873f; }
+  .lb { background: #eff6ff; color: #1d4ed8; }
+  .lo { background: #fff7ed; color: #c2410c; }
+
+  section { padding: 64px 0; }
+  section h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    color: #0d1b2a;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .sub {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  /* ── Vantagens ── */
+  .s-vant { background: #fff; }
+  .vant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+  }
+  .vant {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .vant:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+  .vant.hl {
+    background: linear-gradient(135deg, #0a1628, #0d2147);
+    border-color: transparent;
+  }
+  .vi { font-size: 28px; margin-bottom: 12px; display: block; }
+  .vant h3 { font-size: 15px; font-weight: 700; color: #0d1b2a; margin-bottom: 6px; }
+  .vant p  { font-size: 13px; color: #64748b; line-height: 1.65; }
+  .vant.hl h3 { color: #fff; }
+  .vant.hl p  { color: rgba(255,255,255,0.7); }
+
+  /* ── Integração ── */
+  .s-integ {
+    background: linear-gradient(135deg, #0a1628, #0d2147 55%, #0a3d62);
+    padding: 64px 0;
+  }
+  .s-integ h2  { color: #fff; }
+  .s-integ .sub { color: rgba(255,255,255,0.6); }
+  .s-integ .lg {
+    background: rgba(37,211,102,0.15);
+    color: #25D366;
+    border: 1px solid rgba(37,211,102,0.3);
+  }
+  .integ-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .ic {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .ii { font-size: 24px; margin-bottom: 12px; display: block; }
+  .pill {
+    display: inline-block;
+    background: rgba(37,211,102,0.18);
+    color: #25D366;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .ic h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .ic p  { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+
+  /* ── Segurança ── */
+  .s-seg { background: #fff; }
+  .seg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .sc {
+    border-left: 4px solid #1d4ed8;
+    background: #f8fafc;
+    border-radius: 0 14px 14px 0;
+    padding: 20px 20px 20px 18px;
+    transition: box-shadow 0.2s;
+  }
+  .sc:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+  .sc.g { border-color: #25D366; }
+  .sc.n { border-color: #0d2147; }
+  .si { font-size: 22px; margin-bottom: 10px; display: block; }
+  .sc h3 { font-size: 14px; font-weight: 700; color: #0d1b2a; margin-bottom: 6px; }
+  .sc p  { font-size: 13px; color: #64748b; line-height: 1.65; }
+
+  /* ── Tabela ── */
+  .s-tab { background: #f1f5f9; }
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+  thead tr { background: #0d2147; }
+  thead th {
+    color: #fff;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+  }
+  tbody tr { border-bottom: 1px solid #f1f5f9; transition: background 0.15s; }
+  tbody tr:hover { background: #fafbfc; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody td { padding: 13px 20px; color: #374151; line-height: 1.4; }
+  tbody td:first-child { font-weight: 600; color: #0d1b2a; }
+  .yes { color: #1b873f; font-weight: 700; }
+  .no  { color: #94a3b8; }
+
+  /* ── Footer ── */
+  .footer {
+    background: #0d1b2a;
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .footer p { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+  .btn-wa svg { width: 20px; height: 20px; fill: #fff; }
+
+  @media (max-width: 600px) {
+    .header { padding: 36px 20px 44px; }
+    section { padding: 48px 0; }
+    .wrap { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">Clinica1</div>
+  <div class="badge">⚡ Novo módulo</div>
+  <h1>Agendamento por <span>Inteligência Artificial</span><br>via WhatsApp</h1>
+  <p>Seu assistente que atende, agenda, cancela e remarca consultas — 24h por dia, sem intervenção humana.</p>
+</div>
+
+<!-- S1 — Vantagens -->
+<section class="s-vant">
+  <div class="wrap">
+    <span class="label lg">Principais vantagens</span>
+    <h2>Sua recepção trabalha. A IA não para.</h2>
+    <p class="sub">Um assistente inteligente integrado diretamente ao Clinica1, que opera pelo WhatsApp dos seus pacientes.</p>
+    <div class="vant-grid">
+      <div class="vant hl">
+        <span class="vi">🕐</span>
+        <h3>Disponível 24h, 7 dias por semana</h3>
+        <p>O paciente agenda fora do horário comercial, fins de semana e feriados. A clínica nunca perde um agendamento por falta de atendente.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">📥</span>
+        <h3>Desafoga a recepção</h3>
+        <p>Agendamentos, cancelamentos e remarcações rotineiras são resolvidos sem ocupar nenhum atendente. A equipe foca no atendimento presencial.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">⚡</span>
+        <h3>Alterações on-line e em tempo real</h3>
+        <p>Tudo reflete imediatamente na agenda do Clinica1. O agendamento das 23h aparece no sistema no mesmo instante — sem filas ou sincronização posterior.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">🎯</span>
+        <h3>Vagas controladas pela clínica</h3>
+        <p>As vagas exibidas ao paciente são um subconjunto configurável da agenda total. A clínica decide o que o assistente pode oferecer — o restante permanece invisível.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">🔍</span>
+        <h3>Mostra apenas o necessário</h3>
+        <p>Durante o agendamento, o sistema apresenta ao paciente apenas o mínimo para concluir a operação. A agenda completa jamais é exposta.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">👤</span>
+        <h3>Reconhece pacientes recorrentes</h3>
+        <p>Identifica o número e recupera convênio, especialidade e profissional preferido — o paciente não precisa repetir informações.</p>
+      </div>
+      <div class="vant">
+        <span class="vi">🌐</span>
+        <h3>Atende em qualquer idioma</h3>
+        <p>O assistente responde no idioma em que o paciente escreve, automaticamente, sem nenhuma configuração adicional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S2 — Integração -->
+<section class="s-integ">
+  <div class="wrap">
+    <span class="label lg">Integração total</span>
+    <h2>Cada conversa, visível dentro do Clinica1</h2>
+    <p class="sub">O módulo IA não opera em paralelo — ele é parte do Clinica1. Todo agendamento aparece imediatamente na agenda, e cada diálogo que gerou uma alteração fica disponível para consulta diretamente no sistema.</p>
+    <div class="integ-grid">
+      <div class="ic">
+        <span class="ii">💬</span>
+        <span class="pill">Novo</span>
+        <h3>Diálogo vinculado ao registro</h3>
+        <p>A conversa que originou um agendamento, cancelamento ou remarcação fica acessível dentro do Clinica1, vinculada ao registro. A recepção revê tudo sem sair do sistema.</p>
+      </div>
+      <div class="ic">
+        <span class="ii">🔄</span>
+        <h3>Agenda sempre atualizada</h3>
+        <p>Sem importação, sem lote noturno. As operações da IA modificam a agenda no mesmo momento em que o paciente confirma — como um atendente ao vivo.</p>
+      </div>
+      <div class="ic">
+        <span class="ii">📋</span>
+        <h3>Múltiplos profissionais, unidades e convênios</h3>
+        <p>O assistente conhece toda a estrutura da clínica e conduz o paciente corretamente — especialidade, profissional, unidade e convênio.</p>
+      </div>
+      <div class="ic">
+        <span class="ii">🗂️</span>
+        <h3>Trilha de auditoria completa</h3>
+        <p>Cada operação registra o número do WhatsApp, o identificador de sessão e o momento exato. Cancelamentos preservam o histórico original.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 — Segurança -->
+<section class="s-seg">
+  <div class="wrap">
+    <span class="label lb">Segurança e controle</span>
+    <h2>Proteção em cada operação</h2>
+    <p class="sub">O sistema garante que cada ação seja legítima, rastreável e autorizada.</p>
+    <div class="seg-grid">
+      <div class="sc g">
+        <span class="si">📱</span>
+        <h3>Validação por telefone</h3>
+        <p>Cancelamentos e remarcações só são aceitos pelo mesmo número que realizou o agendamento. Terceiros não cancelam consultas alheias.</p>
+      </div>
+      <div class="sc">
+        <span class="si">🔐</span>
+        <h3>Acesso restrito a telefones autorizados</h3>
+        <p>Aceita agendamentos apenas de números cadastrados — ideal para convênios corporativos ou planos fechados.</p>
+      </div>
+      <div class="sc n">
+        <span class="si">⚙️</span>
+        <h3>Controle por tipo de atendimento</h3>
+        <p>Defina quais tipos o assistente agenda autonomamente e quais exigem validação adicional ou cadastro prévio.</p>
+      </div>
+      <div class="sc g">
+        <span class="si">🗃️</span>
+        <h3>Histórico preservado</h3>
+        <p>Registros cancelados mantêm o telefone de origem, a sessão e os dados originais para auditoria e rastreabilidade total.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 — Tabela -->
+<section class="s-tab">
+  <div class="wrap">
+    <span class="label lo">Comparativo</span>
+    <h2>Recepção tradicional vs. Módulo IA</h2>
+    <p class="sub">O que muda quando a IA assume os agendamentos rotineiros.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Critério</th>
+            <th>Recepção tradicional</th>
+            <th>Módulo IA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Horário de atendimento</td><td class="no">Horário comercial</td><td class="yes">24h / 7 dias</td></tr>
+          <tr><td>Custo por agendamento</td><td class="no">Alto — tempo de atendente</td><td class="yes">Fixo e escalável</td></tr>
+          <tr><td>Atualização da agenda</td><td class="yes">Tempo real</td><td class="yes">Tempo real</td></tr>
+          <tr><td>Remarcação pelo paciente</td><td class="no">Depende de ligação ou presença</td><td class="yes">Autônoma pelo WhatsApp</td></tr>
+          <tr><td>Identificação de recorrentes</td><td class="no">Manual</td><td class="yes">Automática por histórico</td></tr>
+          <tr><td>Vagas expostas ao paciente</td><td class="no">Toda a agenda</td><td class="yes">Subconjunto configurável</td></tr>
+          <tr><td>Validação de cancelamento</td><td class="no">Não verificada</td><td class="yes">Confirmada por número de origem</td></tr>
+          <tr><td>Rastreabilidade dos diálogos</td><td class="no">Inexistente</td><td class="yes">Conversa vinculada ao registro no Clinica1</td></tr>
+          <tr><td>Canal de atendimento</td><td class="no">Telefone, presencial</td><td class="yes">WhatsApp — sem app adicional</td></tr>
+          <tr><td>Idioma do atendimento</td><td class="no">Limitado ao atendente</td><td class="yes">Qualquer idioma, automaticamente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Footer / CTA -->
+<div class="footer">
+  <p>O módulo está em operação em ambiente clínico real. Experimente ao vivo.</p>
+  <a href="https://wa.me/553190895376?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20consulta"
+     class="btn-wa" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Teste fazendo um agendamento por IA
+  </a>
+</div>
+
+</body>
+</html>

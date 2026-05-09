@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; }
+
+  .section {
+    padding: 64px 24px;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section h2 {
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 800;
+    color: #0d1b2a;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: #64748b;
+    max-width: 560px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  .card.featured {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2147 100%);
+    border-color: transparent;
+    grid-column: span 2;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (max-width: 680px) {
+    .card.featured {
+      grid-column: span 1;
+      flex-direction: column;
+    }
+  }
+
+  .card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .card.featured .card-icon {
+    font-size: 56px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0d1b2a;
+    margin-bottom: 8px;
+  }
+
+  .card.featured h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .card.featured p {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+  }
+
+  .badge-new {
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 14px;
+  }
+
+  .card.featured .card-link {
+    color: #25D366;
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+<div class="section">
+  <span class="section-label">Funcionalidades</span>
+  <h2>Tudo o que sua clínica precisa</h2>
+  <p class="section-sub">Uma plataforma completa, da agenda ao faturamento, agora com Inteligência Artificial integrada ao WhatsApp.</p>
+
+  <div class="grid">
+
+    <!-- Destaque IA -->
+    <div class="card featured">
+      <span class="card-icon">🤖</span>
+      <div>
+        <span class="badge-new">Novo</span>
+        <h3>Agendamento por IA via WhatsApp</h3>
+        <p>Inteligência Artificial que conversa com seus pacientes, verifica disponibilidade e agenda consultas automaticamente — 24h por dia, 7 dias por semana, sem intervenção humana.</p>
+        <a href="mailto:contato@clinica1.com.br" class="card-link">Solicitar demonstração →</a>
+      </div>
+    </div>
+
+    <!-- Agendamento Online -->
+    <div class="card">
+      <span class="card-icon">📅</span>
+      <h3>Agendamento on-line</h3>
+      <p>Lembre, confirme ou cancele atendimentos via WhatsApp, SMS ou e-mail. Permita que o próprio paciente agende pelo site da clínica.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Prontuário -->
+    <div class="card">
+      <span class="card-icon">📋</span>
+      <h3>Clínica sem papel</h3>
+      <p>Prontuário eletrônico com anamneses, receituários e solicitações de exames digitais. Assinatura digital integrada.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Faturamento -->
+    <div class="card">
+      <span class="card-icon">💰</span>
+      <h3>Faturamento eficiente</h3>
+      <p>Emita guias, automatize XMLs e conecte-se com convênios. Rateios automáticos e conformidade TISS completa.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Estoque -->
+    <div class="card">
+      <span class="card-icon">📦</span>
+      <h3>Estoque hospitalar</h3>
+      <p>Controle completo com rastreamento de lotes, alertas de vencimento e nível de estoque em tempo real.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Imagens -->
+    <div class="card">
+      <span class="card-icon">🖼️</span>
+      <h3>Imagens e documentos</h3>
+      <p>Armazene e acesse documentos e imagens com segurança, eliminando o risco de perda de documentos físicos.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Caixa -->
+    <div class="card">
+      <span class="card-icon">🏦</span>
+      <h3>Caixa integrado</h3>
+      <p>Agenda e caixa conectados. Cobranças, lançamentos e recebimentos em um único fluxo, com múltiplos operadores.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Segurança -->
+    <div class="card">
+      <span class="card-icon">🔒</span>
+      <h3>Segurança e backup</h3>
+      <p>Altos padrões de segurança, controles de permissão robustos e backup automatizado com rastreamento completo.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+    <!-- Suporte -->
+    <div class="card">
+      <span class="card-icon">🎯</span>
+      <h3>Escalabilidade e suporte</h3>
+      <p>Sistema escalável com consultor dedicado, acompanhamento constante e resolução rápida de qualquer problema.</p>
+      <a href="#" class="card-link">Saiba mais →</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

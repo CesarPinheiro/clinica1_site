@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+
+  .section {
+    padding: 64px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #1b873f;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section h2 {
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 800;
+    color: #0d1b2a;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: #64748b;
+    max-width: 580px;
+    margin-bottom: 52px;
+    line-height: 1.7;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, #25D366, #00b4d8);
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 26px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .step:nth-child(1) .step-icon { background: #e8f5e9; }
+  .step:nth-child(2) .step-icon { background: #e3f2fd; }
+  .step:nth-child(3) .step-icon { background: #fce4ec; }
+  .step:nth-child(4) .step-icon { background: #fff8e1; }
+
+  .step-num {
+    display: inline-block;
+    width: 22px; height: 22px;
+    background: #0d2147;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .step h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0d1b2a;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* Chat mockup */
+  .chat-demo {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 360px;
+    margin: 52px auto 0;
+    border: 1px solid #e2e8f0;
+  }
+
+  .chat-header {
+    background: #075E54;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-avatar {
+    width: 38px; height: 38px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .chat-name { color: #fff; font-size: 15px; font-weight: 600; }
+  .chat-status { color: rgba(255,255,255,0.7); font-size: 12px; }
+
+  .chat-body { background: #e5ddd5; padding: 16px; min-height: 220px; }
+
+  .msg {
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .msg.received { justify-content: flex-start; }
+  .msg.sent     { justify-content: flex-end; }
+
+  .bubble {
+    padding: 9px 13px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 82%;
+    position: relative;
+  }
+
+  .msg.received .bubble {
+    background: #fff;
+    color: #111;
+    border-top-left-radius: 4px;
+  }
+
+  .msg.sent .bubble {
+    background: #dcf8c6;
+    color: #111;
+    border-top-right-radius: 4px;
+  }
+
+  .time { font-size: 11px; color: #999; text-align: right; margin-top: 3px; }
+
+  @media (max-width: 600px) {
+    .steps::before { display: none; }
+    .steps { gap: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="section">
+  <span class="section-label">Como funciona</span>
+  <h2>Agendamento por IA,<br>simples assim</h2>
+  <p class="section-sub">O paciente manda uma mensagem no WhatsApp e a Inteligência Artificial cuida de tudo — identifica o paciente, verifica vagas e confirma o agendamento direto no Clinica1.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">💬</div>
+      <span class="step-num">1</span>
+      <h3>Paciente envia<br>mensagem</h3>
+      <p>O paciente contata pelo WhatsApp da clínica a qualquer hora.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🤖</div>
+      <span class="step-num">2</span>
+      <h3>IA identifica<br>e conversa</h3>
+      <p>A IA reconhece o paciente e conduz o diálogo naturalmente.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">📅</div>
+      <span class="step-num">3</span>
+      <h3>Busca vagas<br>disponíveis</h3>
+      <p>Consulta a agenda do Clinica1 em tempo real e oferece horários.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">✅</div>
+      <span class="step-num">4</span>
+      <h3>Confirma o<br>agendamento</h3>
+      <p>O paciente confirma e a consulta já aparece na agenda da clínica.</p>
+    </div>
+  </div>
+
+  <div class="chat-demo">
+    <div class="chat-header">
+      <div class="chat-avatar">🏥</div>
+      <div>
+        <div class="chat-name">Clinica1 — IA</div>
+        <div class="chat-status">online agora</div>
+      </div>
+    </div>
+    <div class="chat-body">
+      <div class="msg received">
+        <div class="bubble">Olá! Gostaria de agendar uma consulta com Dr. Marcelo.<div class="time">09:14</div></div>
+      </div>
+      <div class="msg sent">
+        <div class="bubble">Oi! 😊 Encontrei 3 horários disponíveis essa semana:<br><br>📅 Quarta, 14/05 às 14h<br>📅 Quinta, 15/05 às 10h<br>📅 Sexta, 16/05 às 16h<br><br>Qual prefere?<div class="time">09:14</div></div>
+      </div>
+      <div class="msg received">
+        <div class="bubble">Quarta às 14h.<div class="time">09:15</div></div>
+      </div>
+      <div class="msg sent">
+        <div class="bubble">✅ Agendado! Consulta com Dr. Marcelo na quarta-feira, 14/05 às 14h. Até lá! 👋<div class="time">09:15</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
