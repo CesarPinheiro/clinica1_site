@@ -137,6 +137,15 @@ do SES (`_amazonses`, `amazonses`), `qr1`/`qr2` (94.72.112.142/.127), `server1` 
 
 ### F2 — Zona na Cloudflare, em paralelo (ainda sem efeito: o Registro.br segue mandando)
 
+**Feito em 29/09/2026:** zona `8ac999f36135611bb1219a8f1b61705f`, plano Free, status
+`pending`, NS **`cecelia.ns.cloudflare.com` / `sterling.ns.cloudflare.com`**. Os 39 registros
+(a exportação menos o A da Linode) entraram pelo *Import* do painel (arquivo BIND, "Proxy
+imported DNS records" desmarcado): 39 DNS only, TTL 3600. `check_zona.py` contra os dois NS:
+**zero diferença**. `@` e `www` seguem no Google Sites até a F3.
+Como foi: gravação por `fetch` na API do painel leva 403 do anti-robô; o que passou foi a
+tela (Import com arquivo) e dois cliques do Cesar (criar a zona, escolher o Free). Enquanto
+`initializing` (antes do plano), os NS respondem REFUSED — não é registro faltando.
+
 1. No painel (Brave): *Add a domain* → `clinica1.com.br` → plano Free. Anotar o par de NS
    atribuído.
 2. Apagar o que a varredura automática da Cloudflare inventar e **recriar exatamente a lista
