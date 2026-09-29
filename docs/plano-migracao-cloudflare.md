@@ -159,6 +159,13 @@ tela (Import com arquivo) e dois cliques do Cesar (criar a zona, escolher o Free
 
 ### F3 — Virada (janela fora do horário das clínicas, ex.: sábado à noite)
 
+**Em andamento, 29/09/2026 ~16h15 (a pedido do Cesar, "Faça"):** NS trocados no painel do
+Registro.br para `cecelia`/`sterling`, campos de DS vazios. O Registro.br **não delega na
+hora**: põe o domínio "em transição" (~2 h) — retira o DS primeiro e só delega depois que o
+cache do DS expira. Ou seja, a ordem segura do passo 1 é o próprio Registro.br que faz.
+Checagem de produção de "antes" (sw.js/ssh/webhook) ficou para depois: leitura de produção
+precisa de liberação no Claude Code.
+
 1. Registro.br → *Alterar servidores DNS* → os dois da Cloudflare, **removendo o DS do
    DNSSEC no mesmo ato** (DS antigo + NS novo = domínio inteiro fora do ar para quem valida
    DNSSEC, que inclui o Google e muitos provedores brasileiros).
