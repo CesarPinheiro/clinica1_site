@@ -53,7 +53,7 @@ python3 -m unittest discover -s tests -t .              # sobre o public/
 
 | Parâmetro | Número | Papel |
 |---|---|---|
-| `whatsapp_comercial` | +55 (31) 99446-7173 | gente: "Fale conosco", contato |
+| `whatsapp_comercial` | +55 (31) 99787-1392 | gente: "Fale conosco", contato |
 | `whatsapp_demo` | 553190895376 | o **atendente virtual por IA** em operação — botão "Teste fazendo um agendamento por IA" |
 
 ## Política de privacidade

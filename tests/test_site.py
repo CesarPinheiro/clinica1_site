@@ -30,7 +30,7 @@ ANTIGOS = [
     "/pagina-inicial_1/facilidade-de-uso", "/pagina-inicial_1/imagens-e-documentos",
     "/pagina-inicial_1/estoque-hospitalar", "/sobre-nosso-módulo-de-ia",
 ]
-WA_COMERCIAL = "5531994467173"
+WA_COMERCIAL = "5531997871392"
 WA_DEMO = "553190895376"
 
 _build = None

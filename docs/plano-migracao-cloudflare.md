@@ -24,7 +24,7 @@ que recusa publicar vermelho e só diz "publicado" depois de conferir ao vivo).
 | `/pagina-inicial_1/imagens-e-documentos` | Imagens e documentos |
 | `/pagina-inicial_1/estoque-hospitalar` | Estoque |
 | `/privacidade` | Política de privacidade |
-| `/contato` | E-mail `contato@clinica1.com.br` + WhatsApp (31) 99446-7173 |
+| `/contato` | E-mail `contato@clinica1.com.br` + WhatsApp (31) 99787-1392 |
 
 - 4–5 imagens por página, servidas por `googleusercontent.com` — **morrem junto com o Google
   Sites**; têm de ser baixadas e hospedadas no novo site.

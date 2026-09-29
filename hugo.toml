@@ -8,8 +8,8 @@ disableKinds = ["taxonomy", "term", "rss"]
   description = "Sistema de gestão clínica na web: agenda, prontuário, prescrição, faturamento TISS e atendente virtual por IA no WhatsApp."
   # Dois números, dois papéis — não trocar um pelo outro:
   # o comercial atende gente; o de demonstração é o próprio atendente virtual por IA em operação.
-  whatsapp_comercial = "5531994467173"
-  whatsapp_comercial_exibe = "+55 (31) 99446-7173"
+  whatsapp_comercial = "5531997871392"
+  whatsapp_comercial_exibe = "+55 (31) 99787-1392"
   whatsapp_demo = "553190895376"
   email = "contato@clinica1.com.br"
 
