@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="hero">
+  <img class="hero-img" src="/img/banner.jpg" alt="" width="1400" height="492" fetchpriority="high">
+  <div class="hero-text">
+    <h1>{{ .Params.hero_title }}</h1>
+    <p>{{ .Params.hero_line }}</p>
+    <p class="hero-actions">
+      <a class="btn primary" href="https://wa.me/{{ .Site.Params.whatsapp_comercial }}">{{ partial "icon.html" "chat" }}Fale conosco</a>
+      <a class="btn" href="/atendente-virtual-por-ia/">Conheça o atendente virtual por IA {{ partial "icon.html" "arrow" }}</a>
+    </p>
+  </div>
+</section>
+<div class="prose home">{{ .Content }}</div>
+{{ partial "cta.html" . }}
+{{ end }}

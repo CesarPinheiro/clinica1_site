@@ -1,0 +1,33 @@
+# Caminhos do site antigo (Google Sites) -> caminhos limpos, em 301.
+# Cada um aparece cru e em percent-encoding (acentos), com e sem a barra final.
+# tests/test_site.py confere que todo destino existe no public/.
+/pagina-inicial_1/ / 301
+/pagina-inicial_1 / 301
+/pagina-inicial_1/anamnese-inteligente/ /anamnese-inteligente/ 301
+/pagina-inicial_1/anamnese-inteligente /anamnese-inteligente/ 301
+/pagina-inicial_1/nosso-bot-de-ia-no-whatsapp /atendente-virtual-por-ia/ 301
+/pagina-inicial_1/nosso-bot-de-ia-no-whatsapp/ /atendente-virtual-por-ia/ 301
+/pagina-inicial_1/prescricao-medica-inteligente /prescricao-medica-inteligente/ 301
+/pagina-inicial_1/prescricao-medica-inteligente/ /prescricao-medica-inteligente/ 301
+/pagina-inicial_1/tudo-em-um-s%C3%B3-lugar /tudo-em-um-so-lugar/ 301
+/pagina-inicial_1/tudo-em-um-s%C3%B3-lugar/ /tudo-em-um-so-lugar/ 301
+/pagina-inicial_1/tudo-em-um-só-lugar/ /tudo-em-um-so-lugar/ 301
+/pagina-inicial_1/tudo-em-um-só-lugar /tudo-em-um-so-lugar/ 301
+/pagina-inicial_1/cl%C3%ADnica-sem-papel/ /clinica-sem-papel/ 301
+/pagina-inicial_1/cl%C3%ADnica-sem-papel /clinica-sem-papel/ 301
+/pagina-inicial_1/clínica-sem-papel/ /clinica-sem-papel/ 301
+/pagina-inicial_1/clínica-sem-papel /clinica-sem-papel/ 301
+/pagina-inicial_1/agendamento-on-line /agendamento-on-line/ 301
+/pagina-inicial_1/agendamento-on-line/ /agendamento-on-line/ 301
+/pagina-inicial_1/faturamento-eficiente/ /faturamento-eficiente/ 301
+/pagina-inicial_1/faturamento-eficiente /faturamento-eficiente/ 301
+/pagina-inicial_1/facilidade-de-uso/ /facilidade-de-uso/ 301
+/pagina-inicial_1/facilidade-de-uso /facilidade-de-uso/ 301
+/pagina-inicial_1/imagens-e-documentos /imagens-e-documentos/ 301
+/pagina-inicial_1/imagens-e-documentos/ /imagens-e-documentos/ 301
+/pagina-inicial_1/estoque-hospitalar /estoque-hospitalar/ 301
+/pagina-inicial_1/estoque-hospitalar/ /estoque-hospitalar/ 301
+/sobre-nosso-m%C3%B3dulo-de-ia/ /atendente-virtual-por-ia/ 301
+/sobre-nosso-m%C3%B3dulo-de-ia /atendente-virtual-por-ia/ 301
+/sobre-nosso-módulo-de-ia /atendente-virtual-por-ia/ 301
+/sobre-nosso-módulo-de-ia/ /atendente-virtual-por-ia/ 301
