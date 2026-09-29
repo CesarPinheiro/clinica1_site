@@ -166,6 +166,11 @@ cache do DS expira. Ou seja, a ordem segura do passo 1 é o próprio Registro.br
 Checagem de produção de "antes" (sw.js/ssh/webhook) ficou para depois: leitura de produção
 precisa de liberação no Claude Code.
 
+**Delegado às 18:25** (`a.dns.br` → `cecelia`/`sterling`, DS=0). `check_zona.py` contra
+`1.1.1.1` e `8.8.8.8`: **zero diferença**; `www` ainda no Google Sites. A zona segue
+`pending` na Cloudflare ("Check nameservers now" não apressou): Pages e redirecionamento do
+apex esperam ela ficar `active`.
+
 1. Registro.br → *Alterar servidores DNS* → os dois da Cloudflare, **removendo o DS do
    DNSSEC no mesmo ato** (DS antigo + NS novo = domínio inteiro fora do ar para quem valida
    DNSSEC, que inclui o Google e muitos provedores brasileiros).
