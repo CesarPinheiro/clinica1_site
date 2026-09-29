@@ -13,6 +13,14 @@ Podemos gravar e passar para texto toda a sua conversa e, ao final, nosso sistem
 
 A qualquer hora do dia ou da noite, nosso atendente virtual por IA emula um atendimento humanizado pelo WhatsApp e está disponível para agendamento, cancelamento e reagendamento, informações sobre os profissionais, especialidades atendidas e muito mais.
 
+## No celular e no tablet, iOS e Android
+
+O Clinica1 funciona no iPhone, no iPad e nos smartphones e tablets Android, direto do navegador, sem instalar nada da loja. Agenda, busca e cadastro de pacientes, anamnese por voz, prescrições, formulários clínicos, fotos pela câmera e pré-impressos, com os mesmos dados do computador.
+
+No tablet, o paciente ainda lê e assina os termos com o dedo.
+
+[Veja as funções no celular e no tablet](/celular-e-tablet/)
+
 ## Inteligência artificial na sua anamnese
 
 Nossa maior preocupação ao desenvolver este módulo foi dar ao médico todas as condições para se dedicar integralmente ao paciente: ao usar o sistema, o seu maior trabalho será falar ao microfone durante a consulta.

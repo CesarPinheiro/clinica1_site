@@ -49,10 +49,14 @@ disableKinds = ["taxonomy", "term", "rss"]
     pageRef = "/facilidade-de-uso"
     weight = 8
   [[menus.recursos]]
+    name = "Celular e tablet"
+    pageRef = "/celular-e-tablet"
+    weight = 9
+  [[menus.recursos]]
     name = "Imagens e documentos"
     pageRef = "/imagens-e-documentos"
-    weight = 9
+    weight = 10
   [[menus.recursos]]
     name = "Estoque hospitalar"
     pageRef = "/estoque-hospitalar"
-    weight = 10
+    weight = 11

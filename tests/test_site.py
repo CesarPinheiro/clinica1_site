@@ -17,7 +17,7 @@ HUGO = str(pathlib.Path.home() / ".local" / "bin" / "hugo")
 ROTAS = [
     "/", "/anamnese-inteligente/", "/atendente-virtual-por-ia/",
     "/prescricao-medica-inteligente/", "/tudo-em-um-so-lugar/", "/clinica-sem-papel/",
-    "/agendamento-on-line/", "/faturamento-eficiente/", "/facilidade-de-uso/",
+    "/agendamento-on-line/", "/faturamento-eficiente/", "/facilidade-de-uso/", "/celular-e-tablet/",
     "/imagens-e-documentos/", "/estoque-hospitalar/", "/contato/", "/privacidade/",
 ]
 # Os caminhos que o Google indexou e que clientes guardaram: nenhum pode dar 404.
