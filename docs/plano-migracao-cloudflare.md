@@ -126,6 +126,7 @@ um teste reprova a palavra "bot" no HTML.
    myhelpgroup (constrói → testa → envia → confere 200 ao vivo). Conferir em
    `clinica1-site.pages.dev`.
 6. **Portão da F1**: Cesar aprova o site no `.pages.dev`.
+   **Aprovado em 29/09/2026** (`https://clinica1-site.pages.dev`, commits `2e15661`..`b8b5b1a`).
 
 ### F2 — Zona na Cloudflare, em paralelo (ainda sem efeito: o Registro.br segue mandando)
 
