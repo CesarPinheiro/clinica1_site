@@ -2,7 +2,9 @@
 """Confere uma zona DNS contra o gabarito exportado do Registro.br (F0 do plano).
 
 Uso:
-    scripts/check_zona.py docs/zona-registro-br-AAAA-MM-DD.txt NS [NS ...]
+    scripts/check_zona.py [--tudo] docs/zona-registro-br-AAAA-MM-DD.txt NS [NS ...]
+
+    --tudo = não pula nada: é para conferir o gabarito contra a zona ANTIGA (e.sec.dns.br).
 
     NS = servidor a consultar: e.sec.dns.br (a zona antiga, prova que o gabarito está
     certo), o par da Cloudflare (F2) ou 1.1.1.1 / 8.8.8.8 (F3, depois da virada).
@@ -63,15 +65,19 @@ def pergunta(ns: str, nome: str, tipo: str) -> set[str]:
 
 
 def main() -> int:
-    if len(sys.argv) < 3:
+    args = sys.argv[1:]
+    tudo = "--tudo" in args
+    args = [a for a in args if a != "--tudo"]
+    if len(args) < 2:
         print(__doc__)
         return 2
-    gabarito = le_gabarito(sys.argv[1])
+    pular = set() if tudo else PULAR
+    gabarito = le_gabarito(args[0])
     falhas = 0
-    for ns in sys.argv[2:]:
+    for ns in args[1:]:
         print(f"== {ns}")
         for (nome, tipo), esperado in sorted(gabarito.items()):
-            if (nome, tipo) in PULAR:
+            if (nome, tipo) in pular:
                 continue
             visto = pergunta(ns, nome, tipo)
             if visto == esperado:

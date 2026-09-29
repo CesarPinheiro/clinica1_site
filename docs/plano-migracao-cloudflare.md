@@ -100,6 +100,13 @@ um teste reprova a palavra "bot" no HTML.
 
 ### F0 — Inventário e congelamento (antes de tocar em nada)
 
+**Feito em 29/09/2026:** `docs/zona-registro-br-2026-09-29.txt`, 40 entradas lidas do painel,
+TTL 3600 em todas, conferidas com `check_zona.py --tudo` contra `e.sec.dns.br` e `f.sec.dns.br`:
+zero diferença. O painel trouxe **11 registros que o `dig` não achou**: 3 CNAMEs de validação
+Sectigo (`_50daa…`, `_dcf9…`, `_e0b1…`), 3 CNAMEs DKIM do Amazon SES (`…._domainkey`), 2 TXT
+do SES (`_amazonses`, `amazonses`), `qr1`/`qr2` (94.72.112.142/.127), `server1` (A + AAAA),
+`suporte` (50.116.45.234). Todos vão para a Cloudflare em DNS only.
+
 1. **Exportar a zona do Registro.br**: no painel, copiar *todos* os registros (nome, tipo,
    valor, TTL) para `docs/zona-registro-br-AAAA-MM-DD.txt` neste repo. Esta lista é o
    gabarito da F2 **e o plano de volta**.
