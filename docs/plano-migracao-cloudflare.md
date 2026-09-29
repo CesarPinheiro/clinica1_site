@@ -137,7 +137,7 @@ um teste reprova a palavra "bot" no HTML.
    A do Linode (sai).
 3. **Conferência máquina, não olho**: um script compara, nome a nome e tipo a tipo,
    `dig @e.sec.dns.br` com `dig @<ns-da-cloudflare>`. Só segue com **zero diferença**
-   (fora `@`/`www`). Este script vai para `scripts/check_zona.sh` e roda de novo na F3.
+   (fora `@`/`www`). Este script vai para `scripts/check_zona.py` e roda de novo na F3.
 4. Em *SSL/TLS*: modo **Full (strict)**; não ativar nada que reescreva conteúdo
    (Rocket Loader, Email Obfuscation) — o c1pwa não passa pela Cloudflare, mas por garantia.
 
@@ -158,7 +158,7 @@ um teste reprova a palavra "bot" no HTML.
    - `s2`/`s4`/`s5`/`mediaserver` respondem na 443;
    - e-mail: mandar de fora para `contato@clinica1.com.br` e responder;
    - site: `https://clinica1.com.br` → `https://www…`, as 13 rotas, os 301 antigos.
-5. `scripts/check_zona.sh` de novo, agora contra o resolvedor público (`1.1.1.1`, `8.8.8.8`).
+5. `scripts/check_zona.py` de novo, agora contra o resolvedor público (`1.1.1.1`, `8.8.8.8`).
 
 ### F4 — Depois (dias seguintes)
 
@@ -184,7 +184,7 @@ por isso a janela é fora do expediente.
 ## 5. Riscos, em ordem
 
 1. **Registro esquecido na F2** → um serviço de produção sai do ar calado. Mitigação: F0 pelo
-   painel (não pelo `dig`) + `check_zona.sh` com zero diferença como portão.
+   painel (não pelo `dig`) + `check_zona.py` com zero diferença como portão.
 2. **DNSSEC** mal ordenado → domínio inteiro fora. Mitigação: DS removido junto com a troca
    de NS; DS novo só na F4.
 3. **Nuvem laranja em nó de produção** → ssh/webhook quebrados. Mitigação: tudo cinza menos
