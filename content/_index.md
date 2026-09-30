@@ -1,7 +1,7 @@
 ---
 title: "Clinica1"
 description: "Sistema de gestão clínica na web: agenda, prontuário, prescrição, faturamento TISS e atendente de IA no WhatsApp."
-hero_title: "Seu paciente com a sua atenção inteira"
+hero_title: "Seu paciente com a sua total atenção"
 hero_line: "Agenda, prontuário, prescrição, faturamento e atendente virtual por IA no WhatsApp — tudo na web, integrado."
 ---
 
