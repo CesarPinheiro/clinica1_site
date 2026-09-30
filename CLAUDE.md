@@ -3,10 +3,11 @@
 Site de divulgação do sistema Clinica1: **Hugo + Cloudflare Pages**, a mesma stack do
 myhelpgroup.com. Código no GitHub: **https://github.com/CesarPinheiro/clinica1_site**.
 
-**Situação (29/09/2026):** migração em andamento — ver
-[docs/plano-migracao-cloudflare.md](docs/plano-migracao-cloudflare.md). Até a virada do DNS
-(fase F3), `www.clinica1.com.br` ainda é o **Google Sites**; o site Hugo está só em
-`https://clinica1-site.pages.dev`.
+**Situação (29/09/2026, ~18h40):** no ar em **https://www.clinica1.com.br** (Cloudflare
+Pages, domínios personalizados `www` e apex). O apex redireciona 301 para o `www` por uma
+Redirect Rule da zona ("Redirect from root to WWW", preserva caminho e query). O DNS da zona
+inteira está na Cloudflare (`cecelia`/`sterling`); plano e pendências da F4 em
+[docs/plano-migracao-cloudflare.md](docs/plano-migracao-cloudflare.md).
 
 ## Publicar
 

@@ -171,6 +171,14 @@ precisa de liberação no Claude Code.
 `pending` na Cloudflare ("Check nameservers now" não apressou): Pages e redirecionamento do
 apex esperam ela ficar `active`.
 
+**F3 concluída, ~18h40.** Zona `active`. Pages → Custom domains: `www` (CNAME
+`ghs.googlehosted.com` → `clinica1-site.pages.dev`) e apex (os 4 A do Google →
+CNAME achatado para o Pages); MX/TXT do apex intocados. Redirect Rule do template
+"root to WWW", 301, preservando query. Conferido no domínio real: 14 páginas 200, os 13
+caminhos antigos 301 para o destino certo, apex e `http://` 301 para `https://www`.
+`check_zona.py` contra 1.1.1.1 e 8.8.8.8: zero diferença. Os botões do painel que não
+aceitam clique CDP aceitam `element.click()` pelo JavaScript da própria página.
+
 1. Registro.br → *Alterar servidores DNS* → os dois da Cloudflare, **removendo o DS do
    DNSSEC no mesmo ato** (DS antigo + NS novo = domínio inteiro fora do ar para quem valida
    DNSSEC, que inclui o Google e muitos provedores brasileiros).
