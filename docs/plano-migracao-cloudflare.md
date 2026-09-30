@@ -198,6 +198,10 @@ aceitam clique CDP aceitam `element.click()` pelo JavaScript da própria página
 
 ### F4 — Depois (dias seguintes)
 
+**Marcada para 01/10/2026** (pedido do Cesar em 29/09: "me lembra daqui a dois dias") —
+DNSSEC na Cloudflare + DS no Registro.br, Search Console + sitemap, despublicar o domínio
+no Google Sites.
+
 1. Ativar DNSSEC na Cloudflare e cadastrar o novo DS no Registro.br (48 h depois, com a
    delegação estável).
 2. Search Console: confirmar propriedade (o TXT veio junto) e enviar o `sitemap.xml`.
