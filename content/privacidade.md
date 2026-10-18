@@ -5,7 +5,7 @@ description: "Como o site clinica1.com.br e o sistema Clinica1 tratam dados pess
 sem_cta: true
 ---
 
-**Última revisão: 29 de setembro de 2026.**
+**Última revisão: 18 de outubro de 2026.**
 
 Esta página explica quais dados pessoais passam pelo site clinica1.com.br e pelo sistema Clinica1, para onde vão e como exercer os seus direitos, nos termos da Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).
 
@@ -43,6 +43,8 @@ Alguns recursos dependem de terceiros. Cada um recebe apenas o necessário para 
 | **Amazon SES** | Envio de e-mails | O endereço de e-mail do destinatário e o conteúdo da mensagem |
 | **OpenTimestamps** | Registro de prova de existência de documentos | Apenas o resumo criptográfico (hash) do documento — nenhum dado legível |
 | **ViaCEP** | Preenchimento de endereço | Apenas o CEP digitado |
+| **gov.br** | Login do profissional para obter números do SNCR | O login é feito pelo profissional diretamente no gov.br; o Clinica1 não vê nem guarda a senha |
+| **Anvisa** (SNCR) | Numeração das receitas especiais e de antimicrobianos (RDC 1.000/2025) | Conselho, UF e número de registro do prescritor, e o CNPJ da plataforma — nenhum dado de paciente |
 
 Alguns desses serviços ficam fora do Brasil. Essa transferência internacional se apoia nas hipóteses do art. 33 da LGPD, e a clínica pode desativar os recursos que dependem de cada um. Os demais serviços — banco de dados, geração de PDFs, assinatura digital — rodam em servidores operados pelo próprio Clinica1.
 

@@ -53,6 +53,7 @@ Na tela de prescrição de cada paciente aparecem as medicações já prescritas
 
 - Base completa de medicamentos da ANVISA, com preço de referência.
 - Receituários automáticos por tipo (comum, controle especial, antimicrobiano).
+- Receitas especiais com número do SNCR (RDC 1.000/2025), com login gov.br no fluxo.
 - Assinatura digital ICP-Brasil (PAdES) com carimbo visual e QR Code de verificação.
 - Envio por e-mail e WhatsApp, com registro de todos os envios.
 
