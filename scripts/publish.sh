@@ -14,8 +14,9 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 HUGO="${HUGO:-$HOME/.local/bin/hugo}"
 PROJECT=clinica1-site
-# Até a virada do DNS (F3 do plano), o site só existe no endereço do Pages.
-BASE="${BASE:-https://clinica1-site.pages.dev}"
+# Desde a F3 do plano (29/09/2026) o domínio real aponta para o Pages; conferir
+# nele prova também o DNS e o custom domain, não só o upload.
+BASE="${BASE:-https://www.clinica1.com.br}"
 
 echo "→ construir"
 "$HUGO" --gc --minify --cleanDestinationDir
