@@ -1,0 +1,2 @@
+{{/* Grade de cartões. Uso: {{< cards >}} {{< card icon="clock" title="…" >}}texto{{< /card >}} {{< /cards >}} */}}
+<div class="cards{{ with .Get "class" }} {{ . }}{{ end }}">{{ .Inner }}</div>

@@ -1,0 +1,48 @@
+# Zona clinica1.com.br exportada do painel do Registro.br (modo avançado) em 29/09/2026 15:12.
+# 40 entradas, todas as que o painel mostra ("1-40 de 40"). Formato: nome tipo valor (@ = domínio).
+# TTL: o painel não mostra; o e.sec.dns.br responde 3600 em TODOS. Gabarito da F2 e PLANO DE VOLTA da F3: recriar isto à mão
+# se o Registro.br não guardar a zona depois da troca de NS.
+# Conferir: scripts/check_zona.py --tudo docs/zona-registro-br-2026-09-29.txt e.sec.dns.br
+#
+# Mudanças PLANEJADAS na Cloudflare (não são erro no check_zona.py sem --tudo):
+#   @ A 139.177.205.92 (Linode) SAI; @ A Google Sites e www CNAME ghs → Cloudflare Pages.
+@ A 139.177.205.92
+@ A 216.239.32.21
+@ A 216.239.34.21
+@ A 216.239.36.21
+@ A 216.239.38.21
+@ MX 1 aspmx.l.google.com
+@ MX 5 alt1.aspmx.l.google.com
+@ MX 5 alt2.aspmx.l.google.com
+@ MX 10 alt3.aspmx.l.google.com
+@ MX 10 alt4.aspmx.l.google.com
+@ MX 10 aspmx2.googlemail.com
+@ MX 10 aspmx3.googlemail.com
+@ MX 10 aspmx4.googlemail.com
+@ MX 10 aspmx5.googlemail.com
+@ TXT "amazonses:m5dl4ATRlguUKvIVRI0njv5qUJaXDrfFQBKLqlFxYYM="
+@ TXT "google-site-verification=ks71z2RyYMqHkFyAtYk4PvTDj-G5gq5RUVbQRFpNwPI"
+_50daa29dc2f75b906640a6bc7302b68f CNAME 43fe555ce75a27a538d68328f8a440c2.3b4b6f21c650360f7d56dabcc3f09184.t0894034001776954467.sectigo.com
+_amazonses TXT "q7nWetwc3qoSdIMvo8Orn4Dxk5B1uP2kMy7emPdZfuA="
+_dcf935292a44951f9a42a63cca3b8a0d CNAME 457c232c219649c7d826b04e27bf0c35.f70653d6d37f4f4b2b4c899166129a7a.t0211740001779202421.sectigo.com
+3nc6irnznmef6dhari2ccbm5z2ytvzso._domainkey CNAME 3nc6irnznmef6dhari2ccbm5z2ytvzso.dkim.amazonses.com
+c4shztxivep3motdjs6ppocdufg2twaj._domainkey CNAME c4shztxivep3motdjs6ppocdufg2twaj.dkim.amazonses.com
+google._domainkey TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtTQLQpuyOvCZ9PRwyEC2Hcgb6XYJEan5cbWMyZMvU5JrsMCEKYe8EczyHf83FKVdTCkcjxLhhDiI70A0+tfdJ7rKXipMDJ16HUXZ9xfNAoi/ktINyXNLMWk1NGFz/KTEjNX5utvy72aTmC8tLn0BM5YBDVLqFZ6vlpsCla741crqAR9o+rCH7zGHBq/Yq9asLiwdjb2JLES5yBXnM8iiLwJjZCnu4W2k3F/0o24vJcsObTEHOoW+43HWxV2R8FfoQzjuF35eHozVTUD80dFlKENOE4GZSzLh1EQD68qAe0B/JLrK+aubcLJMPo6ytPDQiUl6Q6JGr0iCucRjoRhLZQIDAQAB"
+w4byh2ekjrpe2zquleulrty7rl33fyiq._domainkey CNAME w4byh2ekjrpe2zquleulrty7rl33fyiq.dkim.amazonses.com
+_e0b15baed3021761321075696fa26e77 CNAME a923541baa560e26a613bd817add494d.0da953e55f483b52459accc2ded1ca47.t0315056001779216148.sectigo.com
+amazonses TXT "m5dl4ATRlguUKvIVRI0njv5qUJaXDrfFQBKLqlFxYYM="
+ia A 187.127.29.87
+ia2 A 147.93.35.144
+mediaserver A 207.244.227.165
+qr1 A 94.72.112.142
+qr2 A 94.72.112.127
+s1 A 92.112.179.53
+s1 TXT "google-site-verification: google9abb41a9d9891155.html"
+s2 A 92.112.179.68
+s3 A 207.244.227.165
+s4 A 66.94.98.253
+s5 A 179.184.216.249
+server1 A 179.184.216.249
+server1 AAAA 2804:7f2:24c1:ed04:a00:27ff:fe29:efca
+suporte A 50.116.45.234
+www CNAME ghs.googlehosted.com

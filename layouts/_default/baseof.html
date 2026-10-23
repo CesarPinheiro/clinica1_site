@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ $titulo := .Title }}
+  {{ if eq .Kind "404" }}{{ $titulo = "Página não encontrada" }}{{ end }}
+  <title>{{ if .IsHome }}{{ .Site.Title }} — sistema de gestão clínica{{ else }}{{ $titulo }} · {{ .Site.Title }}{{ end }}</title>
+  {{ $desc := .Description }}
+  {{ if not $desc }}{{ $desc = .Summary | plainify | replaceRE "\\s+" " " | chomp | truncate 165 }}{{ end }}
+  {{ if not $desc }}{{ $desc = .Site.Params.description }}{{ end }}
+  <meta name="description" content="{{ $desc }}">
+  {{ if eq .Kind "404" }}<meta name="robots" content="noindex">{{ else }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
+  <meta property="og:title" content="{{ $titulo }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ "img/banner.jpg" | absURL }}">
+  <meta property="og:locale" content="pt_BR">
+  {{/* A ÚNICA exceção ao zero-JavaScript, a mesma do myhelpgroup: guardar a escolha de
+       tema entre páginas não se faz sem localStorage. Síncrono no <head>, antes de pintar,
+       senão a página pisca clara antes de escurecer. Não faz pedidos, não põe cookies:
+       lê uma chave e escreve um atributo. tests/test_site.py trava estes limites. */}}
+  <script>
+  (function () {
+    var r = document.documentElement;
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") r.setAttribute("data-theme", t);
+    } catch (e) {}
+    document.addEventListener("click", function (ev) {
+      var el = ev.target;
+      var b = el && el.closest ? el.closest("[data-set-theme]") : null;
+      if (!b) return;
+      var v = b.getAttribute("data-set-theme");
+      if (v === "auto") { r.removeAttribute("data-theme"); } else { r.setAttribute("data-theme", v); }
+      try { v === "auto" ? localStorage.removeItem("theme") : localStorage.setItem("theme", v); } catch (e) {}
+      var d = b.closest("details");
+      if (d) d.open = false;
+    });
+  })();
+  </script>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  {{ with resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  {{ end }}
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <a class="wordmark" href="/" aria-label="Clinica1 — início">
+        <img src="/brand/logo.png" alt="Clinica1" width="160" height="55">
+      </a>
+      {{/* Menus com <details>: abrem sem JavaScript. */}}
+      <nav class="site" aria-label="Principal">
+        <details class="menu">
+          <summary>Recursos {{ partial "icon.html" "chevron" }}</summary>
+          <div class="menu-list">
+            {{ range .Site.Menus.recursos }}
+            <a href="{{ .URL }}"{{ if $.IsMenuCurrent "recursos" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </details>
+        <a href="/atendente-virtual-por-ia/">Atendente virtual</a>
+        <a href="/contato/">Contato</a>
+        <details class="menu theme">
+          <summary title="Tema" aria-label="Tema">
+            <span class="theme-icon" data-for="auto">{{ partial "icon.html" "auto" }}</span>
+            <span class="theme-icon" data-for="light">{{ partial "icon.html" "sun" }}</span>
+            <span class="theme-icon" data-for="dark">{{ partial "icon.html" "moon" }}</span>
+          </summary>
+          <div class="menu-list theme-list">
+            <button type="button" data-set-theme="auto">{{ partial "icon.html" "auto" }}Automático</button>
+            <button type="button" data-set-theme="light">{{ partial "icon.html" "sun" }}Dia</button>
+            <button type="button" data-set-theme="dark">{{ partial "icon.html" "moon" }}Noite</button>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer class="site">
+    <div class="cols">
+      <div>
+        <img src="/brand/logo.png" alt="Clinica1" width="120" height="41" class="foot-logo">
+        <p>Sistema de gestão clínica na web.</p>
+        <p>
+          <a href="mailto:{{ .Site.Params.email }}">{{ partial "icon.html" "mail" }}{{ .Site.Params.email }}</a><br>
+          <a href="https://wa.me/{{ .Site.Params.whatsapp_comercial }}">{{ partial "icon.html" "chat" }}{{ .Site.Params.whatsapp_comercial_exibe }}</a>
+        </p>
+      </div>
+      <div>
+        <p class="foot-h">Recursos</p>
+        <ul>
+          {{ range .Site.Menus.recursos }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Institucional</p>
+        <ul>
+          <li><a href="/contato/">Contato</a></li>
+          <li><a href="/privacidade/">Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© {{ now.Year }} Clinica1</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{{/* Os dados vêm de hugo.toml [params]: um número ou e-mail trocado muda num lugar só. */}}
+{{ $p := .Site.Params }}
+<div class="cards">
+<div class="card">
+  <span class="card-ic">{{ partial "icon.html" "chat" }}</span>
+  <h3>WhatsApp</h3>
+  <p><a href="https://wa.me/{{ $p.whatsapp_comercial }}">{{ $p.whatsapp_comercial_exibe }}</a><br>Somente mensagens.</p>
+</div>
+<div class="card">
+  <span class="card-ic">{{ partial "icon.html" "mail" }}</span>
+  <h3>E-mail</h3>
+  <p><a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+</div>
+</div>
+<p>Quer ver o atendente virtual por IA funcionando? Converse com ele e faça um agendamento de teste:</p>
+{{ partial "demo-btn.html" (dict "site" .Site "texto" "") }}

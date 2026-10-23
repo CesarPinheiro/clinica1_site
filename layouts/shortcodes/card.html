@@ -1,0 +1,5 @@
+<div class="card{{ if .Get "destaque" }} destaque{{ end }}{{ with .Get "tom" }} tom-{{ . }}{{ end }}">
+  {{ with .Get "icon" }}<span class="card-ic">{{ partial "icon.html" . }}</span>{{ end }}
+  <h3>{{ .Get "title" }}{{ with .Get "selo" }} <span class="selo">{{ . }}</span>{{ end }}</h3>
+  <p>{{ .Inner | markdownify }}</p>
+</div>

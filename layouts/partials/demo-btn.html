@@ -1,0 +1,2 @@
+{{/* Botão para o número de DEMONSTRAÇÃO: é o atendente virtual por IA em operação, não uma pessoa. */}}
+<p class="demo"><a class="btn wa" href="https://wa.me/{{ .site.Params.whatsapp_demo }}?text={{ "Olá, quero agendar uma consulta" | urlquery }}">{{ partial "icon.html" "chat" }}{{ .texto | default "Teste fazendo um agendamento por IA" }}</a></p>

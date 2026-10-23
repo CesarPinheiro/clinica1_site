@@ -1,0 +1,62 @@
+baseURL = "https://www.clinica1.com.br/"
+title = "Clinica1"
+locale = "pt-BR"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  description = "Sistema de gestão clínica na web: agenda, prontuário, prescrição, faturamento TISS e atendente virtual por IA no WhatsApp."
+  # Dois números, dois papéis — não trocar um pelo outro:
+  # o comercial atende gente; o de demonstração é o próprio atendente virtual por IA em operação.
+  whatsapp_comercial = "5531997871392"
+  whatsapp_comercial_exibe = "+55 (31) 99787-1392"
+  whatsapp_demo = "553190895376"
+  email = "contato@clinica1.com.br"
+
+# A ordem do menu de recursos é a do site antigo (Google Sites), que é a ordem em que
+# o Clinica1 se apresenta: IA primeiro, gestão depois.
+[menus]
+  [[menus.recursos]]
+    name = "Anamnese inteligente"
+    pageRef = "/anamnese-inteligente"
+    weight = 1
+  [[menus.recursos]]
+    name = "Atendente virtual por IA"
+    pageRef = "/atendente-virtual-por-ia"
+    weight = 2
+  [[menus.recursos]]
+    name = "Prescrição médica inteligente"
+    pageRef = "/prescricao-medica-inteligente"
+    weight = 3
+  [[menus.recursos]]
+    name = "Tudo em um só lugar"
+    pageRef = "/tudo-em-um-so-lugar"
+    weight = 4
+  [[menus.recursos]]
+    name = "Clínica sem papel"
+    pageRef = "/clinica-sem-papel"
+    weight = 5
+  [[menus.recursos]]
+    name = "Agendamento on-line"
+    pageRef = "/agendamento-on-line"
+    weight = 6
+  [[menus.recursos]]
+    name = "Faturamento eficiente"
+    pageRef = "/faturamento-eficiente"
+    weight = 7
+  [[menus.recursos]]
+    name = "Facilidade de uso"
+    pageRef = "/facilidade-de-uso"
+    weight = 8
+  [[menus.recursos]]
+    name = "Celular e tablet"
+    pageRef = "/celular-e-tablet"
+    weight = 9
+  [[menus.recursos]]
+    name = "Imagens e documentos"
+    pageRef = "/imagens-e-documentos"
+    weight = 10
+  [[menus.recursos]]
+    name = "Estoque hospitalar"
+    pageRef = "/estoque-hospitalar"
+    weight = 11
